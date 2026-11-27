@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🗣️ Bebekler &amp; GPT'ler İçin Türkçe Konuşma ve İşaret Sistemi (r30)</title>
+<style>
+:root{--bg:#f7f3eb;--card:#fffdf9;--ink:#1b2420;--mut:#5c6861;--sage:#2b6b58;--gold:#b6883e;--bdr:#e4dccd;--serif:Georgia,"Times New Roman",serif;--sans:"Segoe UI",system-ui,sans-serif;--mono:Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--sans);padding:24px;max-width:1200px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--bdr);margin-bottom:22px}
+.brand{font:700 12px/1 var(--sans);letter-spacing:3px;text-transform:uppercase;color:var(--sage)}
+.nav a{color:var(--mut);text-decoration:none;font-size:12px;margin-left:14px;font-weight:600}.nav a:hover{color:var(--sage)}
+h1{margin:0 0 8px;font:400 clamp(26px,4vw,42px)/1.12 var(--serif)}
+.lead{color:var(--mut);max-width:740px;margin:0 0 18px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.mbtn{padding:9px 18px;border-radius:999px;border:1px solid var(--sage);background:transparent;color:var(--sage);font-weight:700;font-size:12.5px;cursor:pointer}
+.mbtn.on{background:var(--sage);color:#fff}
+.stage{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.big-word{font:400 34px/1.1 var(--serif);color:var(--sage)}.hece{font:600 14px var(--mono);color:var(--gold);margin-top:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:12px}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:16px;cursor:pointer;text-align:center;transition:all .15s}
+.card:hover,.card.active{border-color:var(--sage);transform:translateY(-2px);box-shadow:0 8px 22px rgba(43,107,88,.1)}
+.emo{font-size:34px;line-height:1.1;margin-bottom:6px}.w{font:700 16px var(--sans)}.sub{font-size:11.5px;color:var(--mut);margin-top:3px}
+.code{font:600 10.5px var(--mono);color:var(--sage);margin-top:6px;background:#eaf3ef;display:inline-block;padding:2px 8px;border-radius:999px}
+.foot{margin-top:24px;text-align:center;font-size:12px;color:var(--mut)}
+</style></head><body>
+
+<header class="top">
+  <div class="brand">SELİN × GAIA · TÜRKÇE KONUŞMA &amp; İŞARET SİSTEMİ</div>
+  <nav class="nav"><a href="./index.html">← AFFFAIR 360°</a><a href="./4domain-final.html">4-Domain Final</a><a href="./gpt.json">GPT</a></nav>
+</header>
+
+<h1>Tek İşaret. Net Türkçe Ses. Bebek ve GPT İçin Ortak Dil.</h1>
+<p class="lead">6–24 ay bebekler için sakin, göz yormayan Türkçe ses + el işareti kartları; GPT'ler için sıfır-beklemeli 16 kesin niyet sinyali. Bir karta dokun — Türkçe seslendirsin.</p>
+
+<div class="bar">
+  <button class="mbtn on" id="btnBebek" onclick="modSec('bebek')">👶 Bebek &amp; Aile Modu (Sakin 0.78× Ses)</button>
+  <button class="mbtn" id="btnGpt" onclick="modSec('gpt')">🤖 GPT Bas-Konuş İşaret Modu</button>
+  <span style="font-size:12px;color:var(--mut)">Not: Tıbbi tanı aracı değildir; ebeveyn &amp; GPT destek prototipidir.</span>
+</div>
+
+<div class="stage">
+  <div>
+    <div class="big-word" id="stWord">💧 Su</div>
+    <div class="hece" id="stHece">Hece: su · Yaş bandı: 6-10 ay</div>
+    <div id="stDesc" style="margin-top:6px;color:var(--mut)">El İşareti: Üç parmak (W) çeneye iki kez dokunur</div>
+  </div>
+  <div style="text-align:right">
+    <div style="font:600 12px var(--mono);color:var(--sage)" id="stGpt">GPT SİNYALİ: GPT_VERI</div>
+    <div style="font-size:12.5px;color:var(--mut);margin-top:4px" id="stGptDesc">Temiz ham girdi akışı isteği</div>
+    <button class="mbtn on" style="margin-top:10px" onclick="tekrarOku()">🔊 Tekrar Seslendir (tr-TR)</button>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+<div class="foot">Argon (r30) · 2026-11-27T07:49:17 · 0 Harici Bağımlılık · Tarayıcı Yerel Web Speech API (tr-TR)</div>
+
+<script>
+var DATA=[{"kod": "IS-01", "kelime": "Anne", "hece": "an-ne", "yas": "6-9 ay", "hareket": "Açık el başparmağı çeneye hafifçe dokunur", "emoji": "👩‍👧", "gpt": "GPT_ANA", "gpt_aciklama": "Ana kök / üst koordinatör çağrısı"}, {"kod": "IS-02", "kelime": "Baba", "hece": "ba-ba", "yas": "6-9 ay", "hareket": "Açık el başparmağı alna hafifçe dokunur", "emoji": "👨‍👧", "gpt": "GPT_KAPTAN", "gpt_aciklama": "İnsan onay / kaptan kapısı"}, {"kod": "IS-03", "kelime": "Su", "hece": "su", "yas": "6-10 ay", "hareket": "Üç parmak (W) çeneye iki kez dokunur", "emoji": "💧", "gpt": "GPT_VERI", "gpt_aciklama": "Temiz ham girdi akışı isteği"}, {"kod": "IS-04", "kelime": "Süt", "hece": "süt", "yas": "6-9 ay", "hareket": "Tek el yumruk yapıp açarak sağma hareketi", "emoji": "🥛", "gpt": "GPT_BESLE", "gpt_aciklama": "Bağlam / hafıza tazeleme"}, {"kod": "IS-05", "kelime": "Daha", "hece": "da-ha", "yas": "7-12 ay", "hareket": "İki elin parmak uçları birbirine iki kez dokunur", "emoji": "➕", "gpt": "GPT_ARTI1", "gpt_aciklama": "+1 özerk tetik / devam et"}, {"kod": "IS-06", "kelime": "Bitti", "hece": "bit-ti", "yas": "7-12 ay", "hareket": "İki açık avuç içten dışa doğru çevrilir", "emoji": "✅", "gpt": "GPT_TESLIM", "gpt_aciklama": "İş tamamlandı · 99_TESLIM mühürle"}, {"kod": "IS-07", "kelime": "Uyku", "hece": "uy-ku", "yas": "8-12 ay", "hareket": "İki avuç birleşip yanağa yaslanır", "emoji": "🌙", "gpt": "GPT_BEKLE", "gpt_aciklama": "Düşük güç / bekleme modu"}, {"kod": "IS-08", "kelime": "Kucak", "hece": "ku-cak", "yas": "6-10 ay", "hareket": "İki kol öne doğru açılır", "emoji": "🤗", "gpt": "GPT_BIRLESTIR", "gpt_aciklama": "İki modülü/çıktıyı birleştir"}, {"kod": "IS-09", "kelime": "Evet", "hece": "e-vet", "yas": "9-14 ay", "hareket": "Yumruk bilekten öne doğru baş sallar gibi iner", "emoji": "👍", "gpt": "GPT_ONAY", "gpt_aciklama": "Bağımsız kabul: ACCEPTED"}, {"kod": "IS-10", "kelime": "Hayır", "hece": "ha-yır", "yas": "9-14 ay", "hareket": "İşaret ve orta parmak başparmağa kapanır", "emoji": "✋", "gpt": "GPT_RED", "gpt_aciklama": "Kabul reddi / fren: REJECTED"}, {"kod": "IS-11", "kelime": "Sıcak", "hece": "sı-cak", "yas": "10-16 ay", "hareket": "Ağız önünden el hızla dışa çekilir", "emoji": "🔥", "gpt": "GPT_UYARI", "gpt_aciklama": "Limit/bütçe/sıcaklık uyarısı"}, {"kod": "IS-12", "kelime": "Soğuk", "hece": "so-ğuk", "yas": "10-16 ay", "hareket": "İki yumruk göğüs yanında hafif titrer", "emoji": "❄️", "gpt": "GPT_DONUK", "gpt_aciklama": "Sürüm donduruldu / salt-okunur"}, {"kod": "IS-13", "kelime": "Oyun", "hece": "o-yun", "yas": "9-15 ay", "hareket": "İki el Y şeklinde yanlarda hafifçe sallanır", "emoji": "🎈", "gpt": "GPT_DENEY", "gpt_aciklama": "Kum havuzu / ggmes.com deneyi"}, {"kod": "IS-14", "kelime": "Müzik", "hece": "mü-zik", "yas": "8-14 ay", "hareket": "Bir el diğer kol üzerinde ritmik salınır", "emoji": "🎵", "gpt": "GPT_SES", "gpt_aciklama": "Türkçe seslendirme / medya akışı"}, {"kod": "IS-15", "kelime": "Işık", "hece": "ı-şık", "yas": "8-14 ay", "hareket": "Kapalı parmaklar yukarıda güneş gibi açılır", "emoji": "✨", "gpt": "GPT_YAYIN", "gpt_aciklama": "Canlıya terfi / görünür kıl"}, {"kod": "IS-16", "kelime": "Sevgi", "hece": "sev-gi", "yas": "10-18 ay", "hareket": "İki kol göğüste çapraz sarılır", "emoji": "💛", "gpt": "GPT_SELAM", "gpt_aciklama": "Selin / Aile / Güvenli bağ"}];
+var mod="bebek", secili=DATA[2];
+function konus(metin){
+  if(!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  var u=new SpeechSynthesisUtterance(metin);
+  u.lang="tr-TR"; u.rate=(mod==="bebek"?0.78:1.05); u.pitch=(mod==="bebek"?1.08:1.0);
+  window.speechSynthesis.speak(u);
+}
+function tekrarOku(){konus(mod==="bebek"?secili.kelime:secili.gpt+" "+secili.kelime);}
+function modSec(m){
+  mod=m;
+  document.getElementById("btnBebek").classList.toggle("on",m==="bebek");
+  document.getElementById("btnGpt").classList.toggle("on",m==="gpt");
+  ciz(); goster(secili,false);
+}
+function goster(item,sesli){
+  secili=item;
+  document.getElementById("stWord").textContent=item.emoji+" "+item.kelime;
+  document.getElementById("stHece").textContent="Hece: "+item.hece+" · Yaş bandı: "+item.yas+" · Kod: "+item.kod;
+  document.getElementById("stDesc").textContent="El İşareti: "+item.hareket;
+  document.getElementById("stGpt").textContent="GPT SİNYALİ: "+item.gpt;
+  document.getElementById("stGptDesc").textContent=item.gpt_aciklama;
+  if(sesli) tekrarOku();
+}
+function ciz(){
+  var g=document.getElementById("grid"); g.innerHTML="";
+  DATA.forEach(function(it){
+    var d=document.createElement("div");
+    d.className="card"+(it.kod===secili.kod?" active":"");
+    d.innerHTML='<div class="emo">'+it.emoji+'</div><div class="w">'+it.kelime+'</div>'+
+      '<div class="sub">'+(mod==="bebek"?it.hece+" · "+it.yas:it.gpt_aciklama)+'</div>'+
+      '<div class="code">'+(mod==="bebek"?it.kod:it.gpt)+'</div>';
+    d.onclick=function(){goster(it,true);ciz();};
+    g.appendChild(d);
+  });
+}
+ciz(); goster(secili,false);
+</script></body></html>

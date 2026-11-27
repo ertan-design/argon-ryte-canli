@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AFFFAIR · 360° Rüzgâr &amp; Kumaş (Quiet Luxury)</title>
+<style>
+:root{--bg:#060609;--ivory:#f3ede2;--mut:rgba(243,237,226,.58);--gold:#d5b476;--glass:rgba(12,12,18,.62);--bdr:rgba(213,180,118,.22);--serif:Georgia,"Times New Roman",serif;--sans:"Segoe UI",system-ui,sans-serif;--mono:Consolas,monospace}
+*{box-sizing:border-box;user-select:none}html,body{margin:0;height:100%;background:var(--bg);color:var(--ivory);font:14px/1.45 var(--sans);overflow:hidden}
+#stage{position:fixed;inset:0;width:100vw;height:100vh;display:block;cursor:grab}
+#stage:active{cursor:grabbing}
+.vignette{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 48%,transparent 34%,rgba(4,4,7,.84) 100%)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;pointer-events:none}
+.brand{font:600 12px/1 var(--sans);letter-spacing:4.5px;text-transform:uppercase;color:var(--gold);pointer-events:auto}
+.top-links{display:flex;gap:18px;pointer-events:auto}
+.top-links a{color:var(--mut);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+.top-links a:hover{color:var(--ivory)}
+.hero-copy{position:fixed;left:28px;top:92px;z-index:10;max-width:440px;pointer-events:none}
+.hero-copy h1{margin:0 0 8px;font:400 clamp(30px,4.2vw,52px)/1.04 var(--serif);letter-spacing:-.4px;text-shadow:0 12px 36px rgba(0,0,0,.75)}
+.hero-copy p{margin:0;color:var(--mut);font-size:14px;max-width:340px}
+.hint{position:fixed;right:28px;top:92px;z-index:10;text-align:right;font:11px/1.6 var(--mono);color:var(--mut);pointer-events:none}
+.hint b{color:var(--gold)}
+.dock{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:12px 18px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--bdr);border-radius:999px;max-width:94vw}
+.sw-row{display:flex;gap:8px;align-items:center}
+.sw{width:24px;height:24px;border-radius:50%;border:2px solid rgba(255,255,255,.22);cursor:pointer;transition:transform .2s,border-color .2s}
+.sw:hover,.sw.active{transform:scale(1.18);border-color:var(--gold)}
+.sep{width:1px;height:20px;background:var(--bdr)}
+.ctrl{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--mut)}
+input[type=range]{width:78px;accent-color:var(--gold);cursor:pointer}
+.pill-btn{background:transparent;color:var(--ivory);border:1px solid var(--bdr);border-radius:999px;padding:6px 13px;font-size:11px;letter-spacing:1.4px;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.pill-btn:hover,.pill-btn.on{background:var(--gold);color:#07070b;border-color:var(--gold);font-weight:700}
+@media(max-width:720px){.hero-copy{top:66px;left:18px}.hint{display:none}.dock{border-radius:20px;bottom:14px;gap:10px}}
+
+.menu-btn{background:rgba(12,12,18,.72);color:#d5b476;border:1px solid rgba(213,180,118,.38);border-radius:999px;padding:7px 14px;font:600 11px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:1.8px;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(10px)}
+.menu-btn:hover{background:#d5b476;color:#07070b}
+.drawer{position:fixed;top:64px;right:24px;z-index:40;width:min(360px,90vw);background:rgba(10,10,16,.92);backdrop-filter:blur(18px);border:1px solid rgba(213,180,118,.28);border-radius:16px;padding:16px;display:none;box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.drawer.open{display:block}
+.drawer-title{font:600 10.5px/1 "Segoe UI",system-ui,sans-serif;letter-spacing:2.4px;text-transform:uppercase;color:#d5b476;margin:0 0 10px}
+.drawer a{display:flex;justify-content:space-between;align-items:center;padding:9px 11px;border-radius:10px;color:#f3ede2;text-decoration:none;font-size:13px;border:1px solid transparent;transition:all .15s}
+.drawer a:hover{background:rgba(213,180,118,.1);border-color:rgba(213,180,118,.28)}
+.drawer a span{font:10.5px Consolas,monospace;color:#5be4a8}
+
+</style></head><body>
+
+<canvas id="stage"></canvas>
+<div class="vignette"></div>
+
+<header class="topbar">
+  <div class="brand">AFFFAIR · ATELIER</div>
+  <nav class="top-links">
+    <a href="./baska-istanbul-atasehir.html">Ataşehir 3-Blok</a>
+    <a href="./dila-4front-senkron.html">4-Front</a>
+    <a href="./wildcard-router.html">Wildcard</a>
+    <a href="./yds-prxs-3d.html">YDS 3D</a>
+    <button class="menu-btn" onclick="toggleArgonDrawer()">Tüm Özellikler (9)</button>
+  </nav>
+</header>
+
+<section class="hero-copy">
+  <h1>Dokun.<br>Rüzgârı Yönet.</h1>
+  <p>Kumaşı 360° çevir, rüzgârla dalgalandır — AFFFAIR sessiz lüksü.</p>
+</section>
+
+<aside class="hint" id="hud">
+  <b>360° SÜRÜKLE</b> · ÇEVİR<br>
+  <b>ÜZERİNDE GEZ</b> · RÜZGÂR VER<br>
+  <span id="fabricLabel">PANTONE 19-5420 TCX · ZÜMRÜT İPEK</span>
+</aside>
+
+<div class="dock">
+  <div class="sw-row" title="Pantone TCX Kumaş Seç">
+    <button class="sw active" style="background:#0b5d4b" onclick="setFabric(0,this)" aria-label="Zümrüt İpek"></button>
+    <button class="sw" style="background:#b85d3b" onclick="setFabric(1,this)" aria-label="Yanık Toprak Keten"></button>
+    <button class="sw" style="background:#e8dfd1" onclick="setFabric(2,this)" aria-label="Kaymaktaşı Merinos"></button>
+    <button class="sw" style="background:#182844" onclick="setFabric(3,this)" aria-label="Gece Çiviti Kaşmir"></button>
+  </div>
+  <div class="sep"></div>
+  <label class="ctrl">Rüzgâr <input id="windRng" type="range" min="0" max="24" value="11"></label>
+  <label class="ctrl">Işık <input id="lightRng" type="range" min="0" max="360" value="42"></label>
+  <div class="sep"></div>
+  <button class="pill-btn on" id="btn8d" onclick="toggle8D()">8D Sürreal</button>
+  <button class="pill-btn" id="btnAuto" onclick="toggleAuto()">360° Tur</button>
+</div>
+
+<script>
+// AFFFAIR 360° Gercek 3D Kumas Fizigi + Chiaroscuro Golgeleme (0 harici kutuphane, 60fps)
+var cv=document.getElementById("stage"), ctx=cv.getContext("2d");
+var W=0, H=0, DPR=Math.min(window.devicePixelRatio||1,2);
+function resize(){W=window.innerWidth;H=window.innerHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}
+window.addEventListener("resize",resize); resize();
+
+var fabrics=[
+  {code:"PANTONE 19-5420 TCX · ZÜMRÜT İPEK", rgb:[14,104,84], spec:0.95, rough:0.22, wave:1.15},
+  {code:"PANTONE 18-1442 TCX · YANIK TOPRAK KETEN", rgb:[182,91,58], spec:0.35, rough:0.65, wave:0.85},
+  {code:"PANTONE 11-0604 TCX · KAYMAKTAŞI MERİNOS", rgb:[232,223,209], spec:0.55, rough:0.48, wave:0.95},
+  {code:"PANTONE 19-4024 TCX · GECE ÇİVİTİ KAŞMİR", rgb:[26,42,74], spec:0.62, rough:0.42, wave:1.05}
+];
+var curFab=0, yaw=0.38, pitch=0.22, autoOrbit=false, mode8D=true;
+var drag=false, lx=0, ly=0, mx=0, my=0, windPushX=0, windPushY=0, t=0;
+
+function setFabric(i,el){
+  curFab=i;
+  document.querySelectorAll(".sw").forEach(function(b){b.classList.remove("active");});
+  if(el) el.classList.add("active");
+  document.getElementById("fabricLabel").textContent=fabrics[i].code;
+  syncState();
+}
+function toggle8D(){mode8D=!mode8D;document.getElementById("btn8d").classList.toggle("on",mode8D);syncState();}
+function toggleAuto(){autoOrbit=!autoOrbit;document.getElementById("btnAuto").classList.toggle("on",autoOrbit);syncState();}
+function syncState(){
+  window.__AFFFAIR_STATE__={
+    schema:"afffair.360-cloth.v1", zaman:"2026-11-27T07:49:17",
+    fabric:fabrics[curFab].code, yawDeg:Math.round((yaw*180/Math.PI)%360),
+    wind:+document.getElementById("windRng").value, lightDeg:+document.getElementById("lightRng").value,
+    surreal8D:mode8D, autoOrbit:autoOrbit
+  };
+}
+
+cv.addEventListener("pointerdown",function(e){drag=true;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId);});
+cv.addEventListener("pointerup",function(){drag=false;});
+cv.addEventListener("pointermove",function(e){
+  var nx=(e.clientX/W)*2-1, ny=(e.clientY/H)*2-1;
+  windPushX+=(nx-mx)*2.6; windPushY+=(ny-my)*2.6; mx=nx; my=ny;
+  if(drag){yaw+=(e.clientX-lx)*0.008; pitch=Math.max(-1.05,Math.min(1.05,pitch+(e.clientY-ly)*0.007)); lx=e.clientX; ly=e.clientY; syncState();}
+});
+
+var COLS=34, ROWS=22, pts=[];
+function buildMesh(){
+  pts=[];
+  var f=fabrics[curFab];
+  var wind=(+document.getElementById("windRng").value)/10;
+  for(var r=0;r<=ROWS;r++){
+    var row=[];
+    var v=r/ROWS; // 0 ust kenar -> 1 alt etek
+    for(var c=0;c<=COLS;c++){
+      var u=c/COLS;
+      var x=(u-0.5)*3.4;
+      var y=(v-0.5)*2.35;
+      // Gercekci ruzgar dalgasi + etek serbestligi + surreail 8D burgu
+      var free=Math.pow(v,0.85)*0.85+0.15;
+      var z=Math.sin(u*5.4-t*2.4+v*2.1)*0.24*wind*f.wave*free
+           +Math.cos(u*9.2+v*4.3-t*3.1)*0.09*wind*free
+           +windPushX*0.28*Math.sin(u*Math.PI)*free
+           +windPushY*0.18*Math.sin(v*Math.PI);
+      var sx=x, sy=y;
+      if(mode8D){
+        var twist=Math.sin(t*0.9+v*3.2)*0.14*v;
+        sx=x*Math.cos(twist)-z*Math.sin(twist);
+        z=x*Math.sin(twist)+z*Math.cos(twist)+Math.sin(u*3.14+t)*0.12;
+      }
+      row.push([sx,sy,z]);
+    }
+    pts.push(row);
+  }
+}
+
+function rot3(p,cy,sy,cp,sp){
+  var x1=p[0]*cy-p[2]*sy, z1=p[0]*sy+p[2]*cy;
+  var y2=p[1]*cp-z1*sp, z2=p[1]*sp+z1*cp;
+  return [x1,y2,z2];
+}
+
+function draw(){
+  t+=0.018;
+  windPushX*=0.93; windPushY*=0.93;
+  if(autoOrbit&&!drag) yaw+=0.0065;
+  buildMesh();
+
+  // Los ortam arka plani + hafif surreail 8D aura
+  var bg=ctx.createRadialGradient(W*0.52,H*0.48,30,W*0.5,H*0.5,Math.max(W,H)*0.68);
+  var base=fabrics[curFab].rgb;
+  bg.addColorStop(0,"rgba("+Math.round(base[0]*0.32)+","+Math.round(base[1]*0.32)+","+Math.round(base[2]*0.36)+",1)");
+  bg.addColorStop(0.55,"#09090f");
+  bg.addColorStop(1,"#040407");
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+  // Surreal 8D isik halkasi (arka planda loş atmosfer)
+  if(mode8D){
+    ctx.save(); ctx.translate(W*0.5,H*0.5);
+    ctx.strokeStyle="rgba(213,180,118,0.14)"; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.ellipse(0,0,Math.min(W,H)*0.36,Math.min(W,H)*0.16,Math.sin(t*0.4)*0.3,0,Math.PI*2); ctx.stroke();
+    ctx.restore();
+  }
+
+  var cy=Math.cos(yaw), sy=Math.sin(yaw), cp=Math.cos(pitch), sp=Math.sin(pitch);
+  var fov=Math.min(W,H)*0.82, camZ=4.35;
+  var lang=(+document.getElementById("lightRng").value)*Math.PI/180;
+  var lx3=Math.cos(lang)*0.8, ly3=-0.45, lz3=Math.sin(lang)*0.8+0.6;
+  var llen=Math.hypot(lx3,ly3,lz3); lx3/=llen; ly3/=llen; lz3/=llen;
+
+  // Tum 3D noktalarini dondur ve 2D projeksiyon al
+  var proj=[];
+  for(var r=0;r<=ROWS;r++){
+    var prow=[];
+    for(var c=0;c<=COLS;c++){
+      var q=rot3(pts[r][c],cy,sy,cp,sp);
+      var s=fov/(camZ-q[2]);
+      prow.push([W*0.5+q[0]*s, H*0.5+q[1]*s, q[2], q[0], q[1]]);
+    }
+    proj.push(prow);
+  }
+
+  // Ressam algoritmasi (Z-sirali gercek 360° derinlik & chiaroscuro golge)
+  var quads=[];
+  for(var r=0;r<ROWS;r++){
+    for(var c=0;c<COLS;c++){
+      var a=proj[r][c], b=proj[r][c+1], d=proj[r+1][c], e=proj[r+1][c+1];
+      var zAvg=(a[2]+b[2]+d[2]+e[2])*0.25;
+      // Yuzey normali
+      var ux=b[3]-a[3], uy=b[4]-a[4], uz=b[2]-a[2];
+      var vx=d[3]-a[3], vy=d[4]-a[4], vz=d[2]-a[2];
+      var nx=uy*vz-uz*vy, ny=uz*vx-ux*vz, nz=ux*vy-uy*vx;
+      var nl=Math.hypot(nx,ny,nz)||1; nx/=nl; ny/=nl; nz/=nl;
+      if(nz<0){nx=-nx;ny=-ny;nz=-nz;}
+      quads.push([zAvg,a,b,e,d,nx,ny,nz,r,c]);
+    }
+  }
+  quads.sort(function(p,q){return p[0]-q[0];});
+
+  var f=fabrics[curFab];
+  for(var i=0;i<quads.length;i++){
+    var q=quads[i];
+    var ndl=Math.max(0,q[5]*lx3+q[6]*ly3+q[7]*lz3);
+    // Chiaroscuro los isik + ipek specular parlamasi + ince dokuma mikro-tanesi
+    var spec=Math.pow(Math.max(0,q[7]*0.7+ndl*0.5),14)*f.spec*95;
+    var weave=((q[8]+q[9])%2===0)?1.03:0.95;
+    var amb=0.14, diff=ndl*0.92;
+    var lum=(amb+diff)*weave;
+    var rr=Math.min(255,Math.round(base[0]*lum+spec*1.05));
+    var gg=Math.min(255,Math.round(base[1]*lum+spec*0.96));
+    var bb=Math.min(255,Math.round(base[2]*lum+spec*0.82));
+    ctx.fillStyle="rgb("+rr+","+gg+","+bb+")";
+    ctx.beginPath();
+    ctx.moveTo(q[1][0],q[1][1]); ctx.lineTo(q[2][0],q[2][1]);
+    ctx.lineTo(q[3][0],q[3][1]); ctx.lineTo(q[4][0],q[4][1]);
+    ctx.closePath(); ctx.fill();
+  }
+  requestAnimationFrame(draw);
+}
+syncState(); draw();
+</script>
+<div class="drawer" id="argonDrawer" aria-label="Tüm Canlı Özellikler">
+  <div class="drawer-title">GAIA × AFAIR × ATAŞEHİR × YDS (0 KAYIP)</div>
+  <a href="./index.html">🪡 AFFFAIR 360° Rüzgâr &amp; Kumaş <span>ANA</span></a>
+  <a href="./baska-istanbul-atasehir.html">🏛️ Ataşehir 3-Blok Uçuş &amp; Pantone Lab <span>0 MAPS</span></a>
+  <a href="./wildcard-router.html">🌐 Sıfır-Klasör Wildcard Alt-Domain <span>&lt;1ms</span></a>
+  <a href="./4domain-final.html">👑 4-Domain Sıfır-Kayıp Final Kataloğu <span>17 ÖZELLİK</span></a>
+  <a href="./dila-4front-senkron.html">✨ Dila 4-Front Senkron Stüdyo <span>CANLI</span></a>
+  <a href="./selinahbap-450k.html">🚪 450.000 Kapı O(1) Motoru <span>2,6 KB</span></a>
+  <a href="./turkce-isaret-bebek.html">🗣️ Türkçe Bebek &amp; GPT İşaret Dili <span>SES+İŞARET</span></a>
+  <a href="./yds-prxs-3d.html">🥾 YDS Group × PRXS 3D &amp; Yansıma <span>8 MODÜL</span></a>
+  <a href="./gpt.json">🤖 1903 GPT Makine Manifesti <span>v3 JSON</span></a>
+</div>
+<script>function toggleArgonDrawer(){var d=document.getElementById("argonDrawer");if(d)d.classList.toggle("open");}</script>
+
+</body></html>

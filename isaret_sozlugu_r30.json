@@ -1,0 +1,86 @@
+{
+ "sema": "gaia.turkce-isaret-bebek-gpt.v1",
+ "zaman": "2026-11-27T07:49:17",
+ "isaretler": [
+  {
+   "kod": "IS-01",
+   "kelime": "Anne",
+   "gpt": "GPT_ANA"
+  },
+  {
+   "kod": "IS-02",
+   "kelime": "Baba",
+   "gpt": "GPT_KAPTAN"
+  },
+  {
+   "kod": "IS-03",
+   "kelime": "Su",
+   "gpt": "GPT_VERI"
+  },
+  {
+   "kod": "IS-04",
+   "kelime": "Süt",
+   "gpt": "GPT_BESLE"
+  },
+  {
+   "kod": "IS-05",
+   "kelime": "Daha",
+   "gpt": "GPT_ARTI1"
+  },
+  {
+   "kod": "IS-06",
+   "kelime": "Bitti",
+   "gpt": "GPT_TESLIM"
+  },
+  {
+   "kod": "IS-07",
+   "kelime": "Uyku",
+   "gpt": "GPT_BEKLE"
+  },
+  {
+   "kod": "IS-08",
+   "kelime": "Kucak",
+   "gpt": "GPT_BIRLESTIR"
+  },
+  {
+   "kod": "IS-09",
+   "kelime": "Evet",
+   "gpt": "GPT_ONAY"
+  },
+  {
+   "kod": "IS-10",
+   "kelime": "Hayır",
+   "gpt": "GPT_RED"
+  },
+  {
+   "kod": "IS-11",
+   "kelime": "Sıcak",
+   "gpt": "GPT_UYARI"
+  },
+  {
+   "kod": "IS-12",
+   "kelime": "Soğuk",
+   "gpt": "GPT_DONUK"
+  },
+  {
+   "kod": "IS-13",
+   "kelime": "Oyun",
+   "gpt": "GPT_DENEY"
+  },
+  {
+   "kod": "IS-14",
+   "kelime": "Müzik",
+   "gpt": "GPT_SES"
+  },
+  {
+   "kod": "IS-15",
+   "kelime": "Işık",
+   "gpt": "GPT_YAYIN"
+  },
+  {
+   "kod": "IS-16",
+   "kelime": "Sevgi",
+   "gpt": "GPT_SELAM"
+  }
+ ]
+}

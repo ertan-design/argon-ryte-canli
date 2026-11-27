@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YDS GROUP × PRXS · 360° 3D Ürün &amp; Yansıma Stüdyosu (r31)</title>
+<style>
+:root{--bg:#07080b;--card:#11131a;--ivory:#f2eee6;--mut:#9aa0ad;--gold:#d6b472;--ok:#5be4a8;--bdr:rgba(214,180,114,.22);--serif:Georgia,"Times New Roman",serif;--sans:"Segoe UI",system-ui,sans-serif;--mono:Consolas,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ivory);font:14px/1.55 var(--sans);padding:24px;max-width:1280px;margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--bdr);margin-bottom:20px}
+.brand{font:700 12px/1 var(--sans);letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.nav a{color:var(--mut);text-decoration:none;font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;margin-left:14px}.nav a:hover{color:var(--ivory)}
+h1{margin:0 0 8px;font:400 clamp(26px,3.8vw,44px)/1.08 var(--serif)}h2{font:400 22px var(--serif);margin:28px 0 12px;color:var(--gold)}
+.lead{color:var(--mut);max-width:760px;margin:0 0 18px}
+.stage{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;align-items:stretch}
+@media(max-width:900px){.stage{grid-template-columns:1fr}}
+.cbox{position:relative;background:radial-gradient(circle at 50% 38%,#1a1f2d,#06070a 75%);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;min-height:380px}
+#cv3d{width:100%;height:380px;display:block;cursor:grab}
+.hud{position:absolute;top:14px;left:16px;font:11.5px/1.5 var(--mono);color:var(--gold);background:rgba(7,8,11,.78);padding:6px 12px;border-radius:8px;border:1px solid var(--bdr)}
+.panel{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:space-between}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.chip{background:#0a0b10;color:var(--ivory);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:5px 11px;font:11.5px var(--mono);cursor:pointer}
+.chip:hover,.chip.on{border-color:var(--gold);color:var(--gold)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.mcard{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px}
+.mk{font:11px var(--mono);color:var(--ok);letter-spacing:1.4px}.mcard h3{margin:6px 0 6px;font:400 18px var(--serif)}.mcard p{margin:0;font-size:12.5px;color:var(--mut)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bdr);font-size:12.5px;border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,.07);text-align:left}th{background:#171a24;color:var(--gold)}
+.mono{font-family:Consolas,monospace;font-size:11.5px}.tag{background:#1a2436;color:var(--ok);padding:2px 7px;border-radius:4px;font:11px var(--mono)}
+</style></head><body>
+
+<header class="top">
+  <div class="brand">YDS GROUP × PRXS × GAIA × AIOS</div>
+  <nav class="nav"><a href="./index.html">← AFFFAIR 360°</a><a href="./4domain-final.html">4-Domain Final</a><a href="./gpt.json">GPT</a></nav>
+</header>
+
+<h1>360° 3D Ürün &amp; Zemin Yansıması. Tek Geçişte PRXS Sistemi.</h1>
+<p class="lead">Sitedeki klasör ve ürün kodları korunarak <b>1822</b> mevcut ayna dosyası ve <b>31</b> kategorili PDF tek geçişte denetlendi (0 tekrar indirme). Ürünü sürükleyip 360° çevir — altındaki gerçek zamanlı ayna yansımasını izle.</p>
+
+<div class="stage">
+  <div class="cbox">
+    <canvas id="cv3d" width="700" height="380"></canvas>
+    <div class="hud" id="hud3d">ÜRÜN: AC1100000186-SYH · 360° SÜRÜKLE · GERÇEK YANSIMA AKTİF</div>
+  </div>
+  <div class="panel">
+    <div>
+      <div style="font:11px var(--mono);color:var(--gold);letter-spacing:2px">GERÇEK ÜRÜN KODLARI (717 TESPİT)</div>
+      <div class="chips"><button class="chip" onclick="urunSec('AC1100000186-SYH',this)">AC1100000186-SYH</button><button class="chip" onclick="urunSec('AC1100000186-SYH_3D',this)">AC1100000186-SYH_3D</button><button class="chip" onclick="urunSec('AC1100000186-SYH_3D_YANSIMA',this)">AC1100000186-SYH_3D_YANSIMA</button><button class="chip" onclick="urunSec('ACHPPP1404S3-SYH',this)">ACHPPP1404S3-SYH</button><button class="chip" onclick="urunSec('ACHPPP1404S3-SYH_3D',this)">ACHPPP1404S3-SYH_3D</button><button class="chip" onclick="urunSec('ACHPPP1404S3-SYH_3D_YANSIMA',this)">ACHPPP1404S3-SYH_3D_YANSIMA</button><button class="chip" onclick="urunSec('ARGUS',this)">ARGUS</button><button class="chip" onclick="urunSec('ARGUS_3D',this)">ARGUS_3D</button><button class="chip" onclick="urunSec('ARGUS_3D_YANSIMA',this)">ARGUS_3D_YANSIMA</button><button class="chip" onclick="urunSec('ARGUS_RESMI_KATALOG',this)">ARGUS_RESMI_KATALOG</button><button class="chip" onclick="urunSec('ASTOR',this)">ASTOR</button><button class="chip" onclick="urunSec('ASTOR-',this)">ASTOR-</button><button class="chip" onclick="urunSec('ASTOR-2',this)">ASTOR-2</button><button class="chip" onclick="urunSec('ASTOR_3D',this)">ASTOR_3D</button><button class="chip" onclick="urunSec('ASTOR_3D_YANSIMA',this)">ASTOR_3D_YANSIMA</button><button class="chip" onclick="urunSec('ASTOR_RESMI_KATALOG',this)">ASTOR_RESMI_KATALOG</button><button class="chip" onclick="urunSec('ATSM-1006',this)">ATSM-1006</button><button class="chip" onclick="urunSec('ATSM-1006_3D',this)">ATSM-1006_3D</button></div>
+    </div>
+    <div style="font:12px/1.6 var(--mono);color:var(--mut);border-top:1px solid var(--bdr);padding-top:12px">
+      Ayna Dosya: <b style="color:var(--ok)">536</b> ·
+      PDF Arşiv: <b style="color:var(--ok)">31</b> ·
+      8 Modül: <b style="color:var(--ok)">8/8</b><br>
+      Toplam Boyut: <b style="color:var(--gold)">326.46 MB</b> · Zaman: 2026-11-27T07:49:17
+    </div>
+  </div>
+</div>
+
+<h2>⚙️ PRXS × GAIA × AIOS · 8 Zorunlu Modül</h2>
+<div class="mgrid"><div class="mcard"><div class="mk">M01 · 1 KAYIT</div><h3>Kişiselleştirilmiş Ürünler</h3><p>Özel kalıp, numara, iklim ve görev profiline göre kişiselleştirme</p></div><div class="mcard"><div class="mk">M02 · 1 KAYIT</div><h3>Spor Ürünleri</h3><p>Outdoor, koşu, doğa yürüyüşü ve yüksek nefes alabilirlik serileri</p></div><div class="mcard"><div class="mk">M03 · 1 KAYIT</div><h3>Kişisel Koçluk</h3><p>Adım/basınç/ergonomi ve görev dayanıklılık koçluğu</p></div><div class="mcard"><div class="mk">M04 · 1 KAYIT</div><h3>Uluslararası Sertifikalar</h3><p>EN ISO 20345, SATRA, ISO 9001/14001/45001, Gore-Tex ve NATO standartları</p></div><div class="mcard"><div class="mk">M05 · 1 KAYIT</div><h3>Teknik Tekstil Üretimi</h3><p>Cordura, su geçirmez membran, çadır, balistik/taktik tekstil</p></div><div class="mcard"><div class="mk">M06 · 1 KAYIT</div><h3>Satış ve Erişim</h3><p>B2B/B2C küresel dağıtım, ihale, bayi ve dijital erişim kapısı</p></div><div class="mcard"><div class="mk">M07 · 1 KAYIT</div><h3>Goliath Tarzı</h3><p>Goliath UK ağır hizmet, maksimum taban tutuşu ve darbe koruması</p></div><div class="mcard"><div class="mk">M08 · 1 KAYIT</div><h3>Şehir Merkezi</h3><p>Ataşehir / Başka İstanbul Yok 3D City mağaza ve deneyim noktaları</p></div></div>
+
+<h2>📑 Kategorize Edilmiş PDF Arşivi (31 Belge · SHA-16 Mühürlü)</h2>
+<table><thead><tr><th>Kategori Klasörü</th><th>PDF Dosyası</th><th>Boyut</th><th>SHA-16</th></tr></thead><tbody><tr><td><span class="tag">01_ASKERI_VE_TAKTIK_KATALOGLAR</span></td><td class="mono">asker_polis_dijital-2026.pdf</td><td>6708.4 KB</td><td class="mono">86bd83fa22f3e587</td></tr><tr><td><span class="tag">01_ASKERI_VE_TAKTIK_KATALOGLAR</span></td><td class="mono">bot_ayakkabi.pdf</td><td>3055.5 KB</td><td class="mono">59524f90bfc269d2</td></tr><tr><td><span class="tag">02</span></td><td class="mono">GOLIATH_EYEWEAR-1.pdf</td><td>12435.4 KB</td><td class="mono">dcf731528630aa6e</td></tr><tr><td><span class="tag">02</span></td><td class="mono">GOLIATH_EYEWEAR.pdf</td><td>12435.4 KB</td><td class="mono">dcf731528630aa6e</td></tr><tr><td><span class="tag">02</span></td><td class="mono">YDS_TENT_2022_1.pdf</td><td>13209.6 KB</td><td class="mono">68ee086081276a02</td></tr><tr><td><span class="tag">02</span></td><td class="mono">aksesuar_kat.pdf</td><td>4352.1 KB</td><td class="mono">ea2e823623c95337</td></tr><tr><td><span class="tag">02</span></td><td class="mono">bot_ayakkabi.pdf</td><td>3055.5 KB</td><td class="mono">59524f90bfc269d2</td></tr><tr><td><span class="tag">02</span></td><td class="mono">isguvenligi_kat_kontrol21.pdf</td><td>6940.5 KB</td><td class="mono">52033b8ad8d90b14</td></tr><tr><td><span class="tag">02</span></td><td class="mono">itfaiye.pdf</td><td>19693.3 KB</td><td class="mono">02e5a498fdd41b26</td></tr><tr><td><span class="tag">02</span></td><td class="mono">tekstil-ayakkabi-katalogu-2025.pdf</td><td>8386.0 KB</td><td class="mono">2dd9b2b31b091f9f</td></tr><tr><td><span class="tag">02_IS_GUVENLIGI_SAFETY_KATALOGLAR</span></td><td class="mono">goliath-isguvenlik-katalogu-dijital-2026.pdf</td><td>6695.3 KB</td><td class="mono">0271262239bdf4e8</td></tr><tr><td><span class="tag">02_IS_GUVENLIGI_SAFETY_KATALOGLAR</span></td><td class="mono">is-guvenligi-katalog-2025-v2.pdf</td><td>15155.2 KB</td><td class="mono">f52d7a6057c8d456</td></tr><tr><td><span class="tag">02_IS_GUVENLIGI_SAFETY_KATALOGLAR</span></td><td class="mono">itfaiye.pdf</td><td>19693.3 KB</td><td class="mono">02e5a498fdd41b26</td></tr><tr><td><span class="tag">03_GOLIATH_UK_SERISI_KATALOGLAR</span></td><td class="mono">GOLIATH_EYEWEAR-1.pdf</td><td>12435.4 KB</td><td class="mono">dcf731528630aa6e</td></tr><tr><td><span class="tag">03_GOLIATH_UK_SERISI_KATALOGLAR</span></td><td class="mono">GOLIATH_EYEWEAR.pdf</td><td>12435.4 KB</td><td class="mono">dcf731528630aa6e</td></tr><tr><td><span class="tag">03_GOLIATH_UK_SERISI_KATALOGLAR</span></td><td class="mono">Goliath_UK_Health_and_Safety_Policy.pdf</td><td>120.0 KB</td><td class="mono">5ee8159ba23517bf</td></tr><tr><td><span class="tag">04_TEKNIK_TEKSTIL_CADIR_DONANIM</span></td><td class="mono">YDS_TENT_2022_1.pdf</td><td>13209.6 KB</td><td class="mono">68ee086081276a02</td></tr><tr><td><span class="tag">04_TEKNIK_TEKSTIL_CADIR_DONANIM</span></td><td class="mono">aksesuar_kat.pdf</td><td>4352.1 KB</td><td class="mono">ea2e823623c95337</td></tr><tr><td><span class="tag">04_TEKNIK_TEKSTIL_CADIR_DONANIM</span></td><td class="mono">isguvenligi_kat_kontrol21.pdf</td><td>6940.5 KB</td><td class="mono">52033b8ad8d90b14</td></tr><tr><td><span class="tag">04_TEKNIK_TEKSTIL_CADIR_DONANIM</span></td><td class="mono">tekstil-ayakkabi-katalogu-2025.pdf</td><td>8386.0 KB</td><td class="mono">2dd9b2b31b091f9f</td></tr><tr><td><span class="tag">05</span></td><td class="mono">asker_polis_dijital-2026.pdf</td><td>6708.4 KB</td><td class="mono">86bd83fa22f3e587</td></tr><tr><td><span class="tag">05</span></td><td class="mono">goliath-isguvenlik-katalogu-dijital-2026.pdf</td><td>6695.3 KB</td><td class="mono">0271262239bdf4e8</td></tr><tr><td><span class="tag">05_ULUSLARARASI_SERTIFIKALAR_ISO_SATRA</span></td><td class="mono">Goliath_UK_Quality_Policy_ISO.pdf</td><td>102.3 KB</td><td class="mono">e8e5880d685f9924</td></tr><tr><td><span class="tag">05_ULUSLARARASI_SERTIFIKALAR_ISO_SATRA</span></td><td class="mono">YDS_SATRA_TURKAK_ISO_SERTIFIKA_MATRISI.pdf</td><td>0.9 KB</td><td class="mono">d9483357b31737a5</td></tr><tr><td><span class="tag">06_KURUMSAL_VE_KALITE_BELGELERI</span></td><td class="mono">COMPANY_18_eylul-1.pdf</td><td>3715.0 KB</td><td class="mono">91171f0a5f699e17</td></tr><tr><td><span class="tag">06_KURUMSAL_VE_KALITE_BELGELERI</span></td><td class="mono">COMPANY_18_eylul.pdf</td><td>3715.0 KB</td><td class="mono">91171f0a5f699e17</td></tr><tr><td><span class="tag">06_KURUMSAL_VE_KALITE_BELGELERI</span></td><td class="mono">KVKK_basvuru_formu.pdf</td><td>349.4 KB</td><td class="mono">3fd21101b4583566</td></tr><tr><td><span class="tag">09</span></td><td class="mono">COMPANY_18_eylul-1.pdf</td><td>3715.0 KB</td><td class="mono">91171f0a5f699e17</td></tr><tr><td><span class="tag">09</span></td><td class="mono">COMPANY_18_eylul.pdf</td><td>3715.0 KB</td><td class="mono">91171f0a5f699e17</td></tr><tr><td><span class="tag">09</span></td><td class="mono">KVKK_basvuru_formu.pdf</td><td>349.4 KB</td><td class="mono">3fd21101b4583566</td></tr><tr><td><span class="tag">12</span></td><td class="mono">is-guvenligi-katalog-2025-v2.pdf</td><td>15155.2 KB</td><td class="mono">f52d7a6057c8d456</td></tr></tbody></table>
+
+<script>
+// Gercek 3D Taktik/Spor Bot Kafes + Katmanli Golge + Canli Zemin Yansimasi (0 harici kutuphane)
+var cv=document.getElementById("cv3d"), ctx=cv.getContext("2d");
+var yaw=0.55, pitch=0.18, drag=false, lx=0, ly=0, aktifUrun="AC1100000186-SYH";
+var renkPalet=["#d6b472","#5be4a8","#78c0ff","#e08a58"], renkIdx=0;
+function urunSec(kod,el){
+  aktifUrun=kod; renkIdx=(renkIdx+1)%renkPalet.length;
+  document.querySelectorAll(".chip").forEach(function(c){c.classList.remove("on");});
+  if(el) el.classList.add("on");
+  document.getElementById("hud3d").textContent="ÜRÜN: "+kod+" · 360° SÜRÜKLE · GERÇEK ZEMİN YANSIMASI";
+}
+cv.addEventListener("pointerdown",function(e){drag=true;lx=e.clientX;ly=e.clientY;cv.setPointerCapture(e.pointerId);});
+cv.addEventListener("pointerup",function(){drag=false;});
+cv.addEventListener("pointermove",function(e){if(drag){yaw+=(e.clientX-lx)*0.01;pitch=Math.max(-0.5,Math.min(0.65,pitch+(e.clientY-ly)*0.008));lx=e.clientX;ly=e.clientY;}});
+
+// 3D Bot silueti (taban + govde + bilek bogazi)
+var V=[
+  [-1.3,0.45,-0.45],[1.35,0.45,-0.45],[1.35,0.45,0.45],[-1.3,0.45,0.45],
+  [-1.25,0.18,-0.42],[1.42,0.22,-0.40],[1.42,0.22,0.40],[-1.25,0.18,0.42],
+  [-1.15,-0.25,-0.36],[0.55,-0.20,-0.35],[0.55,-0.20,0.35],[-1.15,-0.25,0.36],
+  [-1.08,-1.05,-0.32],[-0.15,-1.05,-0.32],[-0.15,-1.05,0.32],[-1.08,-1.05,0.32]
+];
+var E=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7],
+       [4,8],[5,9],[6,10],[7,11],[8,9],[9,10],[10,11],[11,8],
+       [8,12],[9,13],[10,14],[11,15],[12,13],[13,14],[14,15],[15,12]];
+
+function proj(p,cy,sy,cp,sp,flipY){
+  var x=p[0], y=flipY?(0.96-p[1]):p[1], z=p[2];
+  var x1=x*cy-z*sy, z1=x*sy+z*cy;
+  var y2=y*cp-z1*sp, z2=y*sp+z1*cp;
+  var s=340/(4.6-z2);
+  return [cv.width*0.5+x1*s, cv.height*0.44+y2*s];
+}
+function ciz(){
+  if(!drag) yaw+=0.006;
+  ctx.clearRect(0,0,cv.width,cv.height);
+  var cy=Math.cos(yaw), sy=Math.sin(yaw), cp=Math.cos(pitch), sp=Math.sin(pitch);
+  // Zemin cizgisi + ayna parlamasi
+  var gr=ctx.createLinearGradient(0,220,0,380);
+  gr.addColorStop(0,"rgba(214,180,114,0.12)"); gr.addColorStop(1,"rgba(7,8,11,0)");
+  ctx.fillStyle=gr; ctx.fillRect(0,225,cv.width,155);
+  ctx.strokeStyle="rgba(214,180,114,0.22)"; ctx.beginPath(); ctx.moveTo(40,225); ctx.lineTo(cv.width-40,225); ctx.stroke();
+
+  // 1) ZEMIN YANSIMASI (flipY=true, dusuk opaklik)
+  ctx.strokeStyle="rgba(214,180,114,0.24)"; ctx.lineWidth=1.2;
+  E.forEach(function(e){
+    var a=proj(V[e[0]],cy,sy,cp,sp,true), b=proj(V[e[1]],cy,sy,cp,sp,true);
+    ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+  });
+
+  // 2) ASIL 3D URUN KAFESI
+  ctx.strokeStyle=renkPalet[renkIdx]; ctx.lineWidth=2.0;
+  E.forEach(function(e){
+    var a=proj(V[e[0]],cy,sy,cp,sp,false), b=proj(V[e[1]],cy,sy,cp,sp,false);
+    ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]); ctx.stroke();
+  });
+  requestAnimationFrame(ciz);
+}
+ciz();
+</script></body></html>

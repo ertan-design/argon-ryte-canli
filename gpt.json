@@ -1,0 +1,29 @@
+{
+ "schema": "gaia.argon.ecosystem.v3",
+ "version": "r32-healed",
+ "zaman": "2026-11-27T07:49:17",
+ "canli_url": "https://ertan-design.github.io/argon-ryte-canli/",
+ "sayfalar": {
+  "4domain-final.html": "https://ertan-design.github.io/argon-ryte-canli/4domain-final.html",
+  "afffair-360.html": "https://ertan-design.github.io/argon-ryte-canli/afffair-360.html",
+  "baska-istanbul-atasehir.html": "https://ertan-design.github.io/argon-ryte-canli/baska-istanbul-atasehir.html",
+  "dila-4front-senkron.html": "https://ertan-design.github.io/argon-ryte-canli/dila-4front-senkron.html",
+  "index.html": "https://ertan-design.github.io/argon-ryte-canli/index.html",
+  "selinahbap-450k.html": "https://ertan-design.github.io/argon-ryte-canli/selinahbap-450k.html",
+  "turkce-isaret-bebek.html": "https://ertan-design.github.io/argon-ryte-canli/turkce-isaret-bebek.html",
+  "wildcard-router.html": "https://ertan-design.github.io/argon-ryte-canli/wildcard-router.html",
+  "yds-prxs-3d.html": "https://ertan-design.github.io/argon-ryte-canli/yds-prxs-3d.html"
+ },
+ "makine_uclari": {
+  "gpt.json": "https://ertan-design.github.io/argon-ryte-canli/gpt.json",
+  "manifest.json": "https://ertan-design.github.io/argon-ryte-canli/manifest.json",
+  "middleware.js": "https://ertan-design.github.io/argon-ryte-canli/middleware.js",
+  "isaret_sozlugu_r30.json": "https://ertan-design.github.io/argon-ryte-canli/isaret_sozlugu_r30.json",
+  "yds_prxs_manifest_r31.json": "https://ertan-design.github.io/argon-ryte-canli/yds_prxs_manifest_r31.json"
+ },
+ "bagli_vercel_domainleri": [
+  "https://afair.studio/",
+  "https://afair.live/",
+  "https://selinahbap.com/nexus"
+ ]
+}

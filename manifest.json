@@ -1,0 +1,82 @@
+{
+ "sema": "argon.healed-manifest.r32",
+ "zaman": "2026-11-27T07:49:17",
+ "dosya_sayisi": 15,
+ "dosyalar": [
+  {
+   "ad": "4domain-final.html",
+   "bayt": 6612,
+   "sha256": "b2e7f38a01379d66237e0d2bfc636bd0e78c11c749a07e617475d7461d7fc56a"
+  },
+  {
+   "ad": "afffair-360.html",
+   "bayt": 13589,
+   "sha256": "6ea2ddc95eb1f92bf34697016e0ef4e59316f93bba0f8d38f460c3ded81373e8"
+  },
+  {
+   "ad": "atasehir_3blok_ucus.jpg",
+   "bayt": 717418,
+   "sha256": "5b576ac7ddc01404f984c8903e35a0aebbfab7e9c74d4c067cda3a9047c5b764"
+  },
+  {
+   "ad": "baska-istanbul-atasehir.html",
+   "bayt": 22450,
+   "sha256": "30e215c2ebabfaabaeb88376e29a5f8a651fd33f014d8b2dd7edc5f7d0fcb4d0"
+  },
+  {
+   "ad": "dila-4front-senkron.html",
+   "bayt": 6240,
+   "sha256": "efe4a2fa1cc9a63c4aa59545c94858fbad77f4fb87c8be4a668799e8d523557e"
+  },
+  {
+   "ad": "gpt.json",
+   "bayt": 1656,
+   "sha256": "3591c03df6f818f45c9d208f602553ca83daf30b47d4f3e041f68b27d75fe5d9"
+  },
+  {
+   "ad": "index.html",
+   "bayt": 13589,
+   "sha256": "6ea2ddc95eb1f92bf34697016e0ef4e59316f93bba0f8d38f460c3ded81373e8"
+  },
+  {
+   "ad": "isaret_sozlugu_r30.json",
+   "bayt": 1244,
+   "sha256": "aa0d62e1b8ea4eda65c1a138d1e661b605fb74f5c6bb87b07f8d05fe80116502"
+  },
+  {
+   "ad": "middleware.js",
+   "bayt": 778,
+   "sha256": "81b52939ece36080306a4fbc683e26756047d26165695ba3c305e47d0c5221a9"
+  },
+  {
+   "ad": "pantone_iplik_kumas_makro.jpg",
+   "bayt": 1244695,
+   "sha256": "63efd6a754b7f2afdd1acdaff3c4a5962d79f3a25291511b2cb293cbc919e4b1"
+  },
+  {
+   "ad": "selinahbap-450k.html",
+   "bayt": 6496,
+   "sha256": "ac15f4c5bf7d64b9efb1c091d6e13fa2c94cd6acb4c1029e482eb1d7aefce8d2"
+  },
+  {
+   "ad": "turkce-isaret-bebek.html",
+   "bayt": 9402,
+   "sha256": "14a6523ce8ec092bee595ce105690d2cbd5eda2cbc055703c95f040f61cda744"
+  },
+  {
+   "ad": "wildcard-router.html",
+   "bayt": 8715,
+   "sha256": "d7e480a6cc71171729f4058e9771c4520516672f4c913de58766ceb16dcd326e"
+  },
+  {
+   "ad": "yds-prxs-3d.html",
+   "bayt": 15586,
+   "sha256": "ffde75d3868058299fb451ef2b59e52167fbaf401282a5570cbd5b0beebe0b87"
+  },
+  {
+   "ad": "yds_prxs_manifest_r31.json",
+   "bayt": 138,
+   "sha256": "2c8a72b14a8f4161280bb96878839df99ff462cef082bf0b9575cab1a5d78908"
+  }
+ ]
+}
